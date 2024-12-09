@@ -16,25 +16,23 @@ public class EmptyTexture extends ResourceTexture {
         super(location);
     }
 
-    protected TextureData loadTextureData(ResourceManager resourceManager) {
-        try {
-            InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("empty.png");
-            TextureData texture = null;
+    protected TextureData loadTextureData(ResourceManager resourceManager) throws IOException {
+      InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("empty.png");
+      TextureData texture = null;
 
-            if( input != null ) {
+      if( input != null ) {
 
-                try {
-                    texture = new TextureData(new TextureResourceMetadata(true, true), NativeImage.read(input));
-                } finally {
-                    input.close();
-                }
+          try {
+              texture = new TextureData(new TextureResourceMetadata(true, true), NativeImage.read(input));
+          } finally {
+              input.close();
+          }
 
-            }
+      }
 
-            return texture;
-        } catch (IOException var18) {
-            return new TextureData(var18);
-        }
+      return texture;
     }
 
+    private record TextureData(TextureResourceMetadata textureResourceMetadata, NativeImage read) {
+    }
 }
