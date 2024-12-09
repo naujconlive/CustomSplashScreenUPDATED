@@ -1,3 +1,5 @@
+### FORK WAS CREATED TO UPDATE THIS MOD TO 1.21.4, IT WILL BE DELETED ONCE AN OFFICIAL UPDATE COMES OUT
+
 # CustomSplashScreen
 Change minecraft's loading screen to your liking! Completely configurable!
 Allows you to completely change the minecraft splash screen.
